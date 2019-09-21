@@ -20,6 +20,7 @@ Modèlisation :
 
 Peu importe l'OS, une carte réseau présente des propriétés et des méthodes identiques :
 - Un nom, par exemple eth0 ou dummy0 ou dummy0:0 (alias)
+- un type : Ethernet, Bridge, Dummy, ...
 - Une méthode de configuration : DHCP, ou manuel, ou static ou loopback
 - Une ou plusieurs adresses IP avec un masque de sous réseau associé. On appliquera le format CIDR au masque.
 - Une gateway
