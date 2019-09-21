@@ -39,6 +39,6 @@ Transaction :
 L'idée est que le modèle soit transactionnel. C'est à dire que l'on peut appliquer des modifications sans les sauvegarder.
 L'idée est de créer un objet et de disposer de deux méthodes : Apply() et Save().
 
-- Apply() applique la configuration la configuration demandée au système via IPRoute2 (on exploitera la library pyroute2) sans la sauvegarder dans les fichiers de configuration. Au redémarrage, on perdra cette configuration. 
+- Apply() applique la configuration demandée au système via IPRoute2 (on exploitera la library pyroute2) sans la sauvegarder dans les fichiers de configuration. Au redémarrage, on perdra cette configuration. 
 
 - Save() écrira la configuration dans les fichiers. Cependant, on peut envisager que Save() ne soit pas possible si Apply() n'a pas été appelé avant. Cela pourrait permettre d'éviter de stocker une configuration non opérationnelle. Peut-être prévoir une variante pour éviter le contrôle.
