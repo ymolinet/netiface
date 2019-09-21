@@ -32,3 +32,12 @@ Peu importe l'OS, une carte réseau présente des propriétés et des méthodes 
 - Et des commandes, du type post-up ou post-down
 
 Idée : Créer une définition d'objet "netiface" générique avec les attributs de base et la possibilité d'ajouter des attributs personnalisés. La dérivation de la définition de l'objet de base pourrait permettre de créer des définitions d'objets rendant un attribut obligatoire.
+
+Transaction :
+
+L'idée est que le modèle soit transactionnel. C'est à dire que l'on peut appliquer des modifications sans les sauvegarder.
+L'idée est de créer un objet et de disposer de deux méthodes : Apply() et Save().
+
+- Apply() applique la configuration la configuration demandée au système via IPRoute2 (on exploitera la library pyroute2) sans la sauvegarder dans les fichiers de configuration. Au redémarrage, on perdra cette configuration. 
+
+- Save() écrira la configuration dans les fichiers. Cependant, on peut envisager que Save() ne soit pas possible si Apply() n'a pas été appelé avant. Cela pourrait permettre d'éviter de stocker une configuration non opérationnelle. Peut-être prévoir une variante pour éviter le contrôle.
