@@ -42,3 +42,16 @@ L'idée est de créer un objet et de disposer de deux méthodes : Apply() et Sav
 - Apply() applique la configuration demandée au système via IPRoute2 (on exploitera la library pyroute2) sans la sauvegarder dans les fichiers de configuration. Au redémarrage, on perdra cette configuration. 
 
 - Save() écrira la configuration dans les fichiers. Cependant, on peut envisager que Save() ne soit pas possible si Apply() n'a pas été appelé avant. Cela pourrait permettre d'éviter de stocker une configuration non opérationnelle. Peut-être prévoir une variante pour éviter le contrôle.
+
+Objets :
+
+netiface represente un objet de définition d'une interface unique.
+netmanager represente un objet qui contient toutes les interfaces du système (list d'objet netiface et methode global pour l'ajout, la suppression par exemple
+
+netmanager doit contenir les méthodes suivantes :
+  - Load(), recharge la configuration unique d'une interface (les modifications sont perdues)
+  - LoadAll(), recharge toutes les configurations des interfaces (les modifications sont perdues)
+  - SaveAll(), sauvegarde toutes les modifications sur toutes les interfaces
+  - ApplyAll(), applique toutes les modifications.
+  - Add(), ajoute une définition d'interface
+  - Remove(), supprime une définition d'interface
