@@ -1,6 +1,6 @@
 # netiface
 Objectif : Manipuler la configuration des interfaces réseaux pour Debian/Ubuntu/CentOS.
-La configuration est stockée différent entre CentOS et Debian.
+La configuration est stockée différemment entre CentOS et Debian.
 L'idée est de proposer une Classe d'objet et des méthodes pour manipuler les interfaces.
 La mécanique arrière se chargera alors d'écrire les fichiers de configuration convenablement en fonction de l'OS.
 
